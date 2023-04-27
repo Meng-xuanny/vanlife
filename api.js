@@ -98,3 +98,9 @@ export async function loginUser(creds) {
 
   return data;
 }
+
+export async function fakeLoginUser(creds) {
+  if (creds.email === "b@b.com" && creds.password === "p123")
+    return "User is logged in";
+  throw new Error("Couldn't log user in");
+}
